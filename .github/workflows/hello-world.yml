@@ -1,0 +1,24 @@
+
+name: Hello World CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print greeting
+        run: echo "Hello World from GitHub Actions!"
+
+      - name: Verify Python
+        run: python3 --version
