@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+      - 'test/**'
+      - 'test/branch-protection'
   pull_request:
     branches:
       - main
@@ -17,8 +19,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
       - name: Print greeting
-        run: echo "Branch protection test is successful!"
+        run: echo "Hello World from GitHub Actions!"
 
       - name: Verify Python
-        run: python3 --version
+        run: python --version
+
+      - name: Run calculator unit tests
+        run: python -m unittest -v test_calculator.py
