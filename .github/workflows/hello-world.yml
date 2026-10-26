@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Print greeting
-        run: echo "Branch protection test successful!"
+        run: echo "Branch protection test is successful!"
 
       - name: Verify Python
         run: python3 --version
