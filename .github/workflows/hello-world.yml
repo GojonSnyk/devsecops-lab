@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Print greeting
-        run: echo "Hello World from GitHub Actions!"
+        run: echo "Branch protection test successful!"
 
       - name: Verify Python
         run: python3 --version
