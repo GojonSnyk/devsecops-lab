@@ -4,6 +4,7 @@ name: Snyk Open Source Scan
 on:
   push:
     branches:
+      - main
       - test/snyk-actions
   pull_request:
     branches:
