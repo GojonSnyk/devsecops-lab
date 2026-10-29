@@ -28,3 +28,21 @@ jobs:
           SNYK_API: https://api.au.snyk.io
         with:
           args: --severity-threshold=high
+
+  snyk-code:
+    name: Snyk Code Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Snyk CLI
+        uses: snyk/actions/setup@master
+
+      - name: Run Snyk Code scan
+        run: snyk code test --severity-threshold=high
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_API: https://api.au.snyk.io
+
