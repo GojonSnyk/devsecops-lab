@@ -25,5 +25,6 @@ jobs:
         uses: snyk/actions/python@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_API: https://api.au.snyk.io
         with:
           args: --severity-threshold=high
