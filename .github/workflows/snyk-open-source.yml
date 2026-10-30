@@ -35,9 +35,6 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           SNYK_API: https://api.au.snyk.io
-        with:
-          args: --command-python
-          command: monitor
 
   snyk-code:
     name: Snyk Code Scan
