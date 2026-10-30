@@ -30,6 +30,14 @@ jobs:
         with:
           args: --severity-threshold=high
 
+      name: Monitor project in Snyk Dashboard
+        uses: snyk/actions/python@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_API: https://api.au.snyk.io
+        with:
+          command: monitor
+
   snyk-code:
     name: Snyk Code Scan
     runs-on: ubuntu-latest
