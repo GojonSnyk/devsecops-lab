@@ -31,10 +31,13 @@ jobs:
           args: --severity-threshold=high
 
       - name: Install Snyk CLI
+        if: always()
         uses: snyk/actions/setup@master
 
       - name: Monitor project in Snyk Dashboard
-        uses: snyk/actions/python@master
+        if: always()
+        # uses: snyk/actions/python@master
+        run: snyk monitor --command=python
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           SNYK_API: https://api.au.snyk.io
