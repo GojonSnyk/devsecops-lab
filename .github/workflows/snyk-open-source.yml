@@ -30,6 +30,9 @@ jobs:
         with:
           args: --severity-threshold=high
 
+      - name: Install Snyk CLI
+        uses: snyk/actions/setup@master
+
       - name: Monitor project in Snyk Dashboard
         uses: snyk/actions/python@master
         env:
