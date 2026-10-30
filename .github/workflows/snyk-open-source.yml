@@ -30,7 +30,7 @@ jobs:
         with:
           args: --severity-threshold=high
 
-      name: Monitor project in Snyk Dashboard
+      - name: Monitor project in Snyk Dashboard
         uses: snyk/actions/python@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
